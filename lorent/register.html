@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login and Registration Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .container {
+            width: 300px;
+            padding: 16px;
+            background-color: white;
+            margin: 0 auto;
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type=text], input[type=password], input[type=email] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        .forgot-password, .register-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .forgot-password a, .register-link a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .forgot-password a:hover, .register-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <form id="loginForm">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button type="button" onclick="login()">Login</button>
+        <div class="forgot-password">
+            <a href="#">Forgot Password?</a>
+        </div>
+        <div class="register-link">
+            <a href="#registerForm">Don't have an account? Register here</a>
+        </div>
+    </form>
+</div>
+
+<div class="container" id="registerForm">
+    <form>
+        <label for="regUname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="regUname" required>
+
+        <label for="email"><b>Email</b></label>
+        <input type="email" placeholder="Enter Email" name="email" required>
+
+        <label for="regPsw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="regPsw" required>
+
+        <button type="button" onclick="register()">Register</button>
+    </form>
+</div>
+
+<script>
+    function login() {
+        var username = document.getElementsByName('uname')[0].value;
+        var password = document.getElementsByName('psw')[0].value;
+
+        // Admin credentials
+        var adminUsername = 'admin';
+        var adminPassword = 'admin123';
+
+        if (username === adminUsername && password === adminPassword) {
+            alert('Welcome, Admin!');
+        } else {
+            alert('Invalid credentials, please try again.');
+        }
+    }
+
+    function register() {
+        var username = document.getElementsByName('regUname')[0].value;
+        var email = document.getElementsByName('email')[0].value;
+        var password = document.getElementsByName('regPsw')[0].value;
+
+        // Here you can add code to handle the registration process
+        alert('Registration successful for ' + username);
+    }
+</script>
+
+</body>
+</html>
